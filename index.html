@@ -1,0 +1,616 @@
+
+<!-- احفظ هذا كملف SVG ثم حوله إلى PNG -->
+<svg width="192" height="192" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="192" rx="24" fill="#667eea"/>
+  <rect x="24" y="24" width="144" height="144" rx="12" fill="white"/>
+  <text x="96" y="110" text-anchor="middle" fill="#667eea" font-family="Arial" font-size="48" font-weight="bold">💼</text>
+  <text x="96" y="140" text-anchor="middle" fill="#667eea" font-family="Arial" font-size="16">محاسبة</text>
+</svg>
+
+<!-- احفظ هذا كملف SVG ثم حوله إلى PNG -->
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="64" fill="#667eea"/>
+  <rect x="64" y="64" width="384" height="384" rx="32" fill="white"/>
+  <text x="256" y="300" text-anchor="middle" fill="#667eea" font-family="Arial" font-size="128" font-weight="bold">💼</text>
+  <text x="256" y="380" text-anchor="middle" fill="#667eea" font-family="Arial" font-size="48">تطبيق المحاسبة</text>
+</svg>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>تطبيق المحاسبة - Android</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="تطبيق المحاسبة">
+    <meta name="description" content="تطبيق محاسبة متكامل لإدارة المنتجات والأسعار والخصومات">
+    <meta name="keywords" content="محاسبة, منتجات, أسعار, خصومات, تطبيق">
+    <meta name="author" content="تطبيق المحاسبة">
+    <link rel="manifest" href="data:application/json;charset=utf-8,%7B%22name%22%3A%22%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%20%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A9%22%2C%22short_name%22%3A%22%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A9%22%2C%22description%22%3A%22%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%20%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A9%20%D9%85%D8%AA%D9%83%D8%A7%D9%85%D9%84%20%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA%20%D9%88%D8%A7%D9%84%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1%20%D9%88%D8%A7%D9%84%D8%AE%D8%B5%D9%88%D9%85%D8%A7%D8%AA%22%2C%22id%22%3A%22accounting-app-v1%22%2C%22start_url%22%3A%22./%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23ffffff%22%2C%22theme_color%22%3A%22%23667eea%22%2C%22orientation%22%3A%22portrait-primary%22%2C%22scope%22%3A%22./%22%2C%22lang%22%3A%22ar%22%2C%22dir%22%3A%22rtl%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage/svg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI%2BCjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9IiM2NjdlZWEiLz4KPHJlY3QgeD0iNjQiIHk9IjY0IiB3aWR0aD0iMzg0IiBoZWlnaHQ9IjM4NCIgcng9IjMyIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIyNTYiIGN5PSIyMDAiIHI9IjQwIiBmaWxsPSIjNjY3ZWVhIi8%2BCjxyZWN0IHg9IjE4MCIgeT0iMjYwIiB3aWR0aD0iMTUyIiBoZWlnaHQ9IjEyIiByeD0iNiIgZmlsbD0iIzY2N2VlYSIvPgo8cmVjdCB4PSIxODAiIHk9IjI4NCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxMiIgcng9IjYiIGZpbGw9IiM2NjdlZWEiLz4KPHJlY3QgeD0iMTgwIiB5PSIzMDgiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTIiIHJ4PSI2IiBmaWxsPSIjNjY3ZWVhIi8%2BCjxyZWN0IHg9IjE4MCIgeT0iMzMyIiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjEyIiByeD0iNiIgZmlsbD0iIzY2N2VlYSIvPgo8L3N2Zz4K%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image/svg%2Bxml%22%2C%22purpose%22%3A%22any%20maskable%22%7D%2C%7B%22src%22%3A%22data%3Aimage/svg%2Bxml%3Bbase64%2CPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI%2BCjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiM2NjdlZWEiLz4KPHJlY3QgeD0iMjQiIHk9IjI0IiB3aWR0aD0iMTQ0IiBoZWlnaHQ9IjE0NCIgcng9IjEyIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI5NiIgY3k9IjgwIiByPSIxNiIgZmlsbD0iIzY2N2VlYSIvPgo8cmVjdCB4PSI1NiIgeT0iMTA4IiB3aWR0aD0iODAiIGhlaWdodD0iNiIgcng9IjMiIGZpbGw9IiM2NjdlZWEiLz4KPHJlY3QgeD0iNTYiIHk9IjEyMCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjYiIHJ4PSIzIiBmaWxsPSIjNjY3ZWVhIi8%2BCjxyZWN0IHg9IjU2IiB5PSIxMzIiIHdpZHRoPSI3MiIgaGVpZ2h0PSI2IiByeD0iMyIgZmlsbD0iIzY2N2VlYSIvPgo8L3N2Zz4K%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image/svg%2Bxml%22%2C%22purpose%22%3A%22any%20maskable%22%7D%5D%2C%22categories%22%3A%5B%22business%22%2C%22finance%22%2C%22productivity%22%5D%2C%22prefer_related_applications%22%3Afalse%2C%22launch_handler%22%3A%7B%22client_mode%22%3A%22navigate-existing%22%7D%7D">
+    
+    <!-- Icons -->
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzY2N2VlYSIvPgo8cmVjdCB4PSI0IiB5PSI0IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHJ4PSIyIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSIxNiIgY3k9IjEyIiByPSIzIiBmaWxsPSIjNjY3ZWVhIi8+CjxyZWN0IHg9IjgiIHk9IjE4IiB3aWR0aD0iMTYiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiM2NjdlZWEiLz4KPHJlY3QgeD0iOCIgeT0iMjEiIHdpZHRoPSIxMiIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iIzY2N2VlYSIvPgo8L3N2Zz4K" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiM2NjdlZWEiLz4KPHJlY3QgeD0iMjQiIHk9IjI0IiB3aWR0aD0iMTQ0IiBoZWlnaHQ9IjE0NCIgcng9IjEyIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI5NiIgY3k9IjgwIiByPSIxNiIgZmlsbD0iIzY2N2VlYSIvPgo8cmVjdCB4PSI1NiIgeT0iMTA4IiB3aWR0aD0iODAiIGhlaWdodD0iNiIgcng9IjMiIGZpbGw9IiM2NjdlZWEiLz4KPHJlY3QgeD0iNTYiIHk9IjEyMCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjYiIHJ4PSIzIiBmaWxsPSIjNjY3ZWVhIi8+CjxyZWN0IHg9IjU2IiB5PSIxMzIiIHdpZHRoPSI3MiIgaGVpZ2h0PSI2IiByeD0iMyIgZmlsbD0iIzY2N2VlYSIvPgo8L3N2Zz4K">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+        
+        * {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        input, textarea {
+            -webkit-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+        
+        body { 
+            font-family: 'Cairo', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overscroll-behavior: none;
+        }
+        
+        .table-header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+        }
+        
+        .row-hover:hover { 
+            background-color: #f8fafc; 
+            transform: translateY(-1px); 
+            transition: all 0.2s ease; 
+        }
+        
+        .input-focus:focus { 
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); 
+        }
+        
+        .mobile-btn {
+            min-height: 48px;
+            touch-action: manipulation;
+        }
+        
+        .mobile-input {
+            min-height: 48px;
+            font-size: 16px; /* Prevents zoom on iOS */
+        }
+        
+        .fab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .slide-up {
+            animation: slideUp 0.3s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .modal-overlay {
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        
+        .safe-area-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        
+        .safe-area-top {
+            padding-top: env(safe-area-inset-top);
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-table {
+                display: none;
+            }
+            .mobile-cards {
+                display: block;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .mobile-table {
+                display: table;
+            }
+            .mobile-cards {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen safe-area-top safe-area-bottom">
+    <div class="container mx-auto px-4 py-6 pb-24">
+        <!-- Header -->
+        <div class="text-center mb-6 slide-up">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">💼 تطبيق المحاسبة</h1>
+            <p class="text-gray-600 text-sm md:text-base">إدارة المنتجات والأسعار والخصومات</p>
+        </div>
+
+        <!-- Summary Cards - Mobile First -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+            <div class="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl p-4 shadow-lg slide-up">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-green-100 text-xs">إجمالي المبيعات</p>
+                        <p class="text-lg md:text-xl font-bold" id="totalSales">0.00 ريال</p>
+                    </div>
+                    <span class="text-2xl">💰</span>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl p-4 shadow-lg slide-up">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-red-100 text-xs">إجمالي الخصومات</p>
+                        <p class="text-lg md:text-xl font-bold" id="totalDiscounts">0.00 ريال</p>
+                    </div>
+                    <span class="text-2xl">🏷️</span>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl p-4 shadow-lg slide-up">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-blue-100 text-xs">عدد المنتجات</p>
+                        <p class="text-lg md:text-xl font-bold" id="totalProducts">0</p>
+                    </div>
+                    <span class="text-2xl">📦</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Display -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden slide-up">
+            <div class="table-header text-white p-4">
+                <h2 class="text-xl md:text-2xl font-semibold flex items-center">
+                    <span class="ml-2">📊</span> المنتجات
+                </h2>
+            </div>
+            
+            <!-- Desktop Table -->
+            <div class="overflow-x-auto mobile-table">
+                <table class="w-full">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-4 py-3 text-right text-xs font-semibold text-gray-700 border-b">#</th>
+                            <th class="px-4 py-3 text-right text-xs font-semibold text-gray-700 border-b">المنتج</th>
+                            <th class="px-4 py-3 text-right text-xs font-semibold text-gray-700 border-b">السعر الأصلي</th>
+                            <th class="px-4 py-3 text-right text-xs font-semibold text-gray-700 border-b">الخصم</th>
+                            <th class="px-4 py-3 text-right text-xs font-semibold text-gray-700 border-b">السعر النهائي</th>
+                            <th class="px-4 py-3 text-right text-xs font-semibold text-gray-700 border-b">الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsTable">
+                        <tr>
+                            <td colspan="6" class="px-6 py-12 text-center text-gray-500">
+                                <div class="flex flex-col items-center">
+                                    <span class="text-4xl mb-2">📦</span>
+                                    <p>لا توجد منتجات</p>
+                                    <p class="text-sm">اضغط + لإضافة منتج</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mobile Cards -->
+            <div class="mobile-cards p-4" id="mobileCards">
+                <div class="text-center text-gray-500 py-12">
+                    <span class="text-4xl mb-2 block">📦</span>
+                    <p>لا توجد منتجات</p>
+                    <p class="text-sm">اضغط + لإضافة منتج</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <button onclick="openAddModal()" class="fab bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full w-14 h-14 mobile-btn shadow-lg hover:shadow-xl transition-all duration-200">
+        <span class="text-2xl">+</span>
+    </button>
+
+    <!-- Add Product Modal -->
+    <div id="addModal" class="fixed inset-0 bg-black bg-opacity-50 modal-overlay hidden z-50 flex items-end md:items-center justify-center">
+        <div class="bg-white w-full md:w-96 md:rounded-xl rounded-t-xl p-6 slide-up safe-area-bottom">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-semibold text-gray-800">إضافة منتج جديد</h3>
+                <button onclick="closeAddModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">اسم المنتج</label>
+                    <input type="text" id="productName" placeholder="أدخل اسم المنتج" 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent mobile-input">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">السعر قبل الخصم</label>
+                    <input type="number" id="originalPrice" placeholder="0.00" step="0.01"
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent mobile-input">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">نسبة الخصم (%)</label>
+                    <input type="number" id="discountPercent" placeholder="0" min="0" max="100"
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent mobile-input">
+                </div>
+                
+                <div id="pricePreview" class="bg-gray-50 p-3 rounded-lg hidden">
+                    <div class="text-sm text-gray-600">
+                        <div class="flex justify-between">
+                            <span>السعر الأصلي:</span>
+                            <span id="previewOriginal">0.00 ريال</span>
+                        </div>
+                        <div class="flex justify-between text-red-600">
+                            <span>مبلغ الخصم:</span>
+                            <span id="previewDiscount">0.00 ريال</span>
+                        </div>
+                        <div class="flex justify-between font-bold text-green-600 border-t pt-2 mt-2">
+                            <span>السعر النهائي:</span>
+                            <span id="previewFinal">0.00 ريال</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex gap-3 pt-4">
+                    <button onclick="addProduct()" 
+                            class="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 rounded-lg font-semibold mobile-btn">
+                        إضافة المنتج
+                    </button>
+                    <button onclick="closeAddModal()" 
+                            class="px-6 bg-gray-300 text-gray-700 py-3 rounded-lg font-semibold mobile-btn">
+                        إلغاء
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let products = [];
+        let productCounter = 1;
+
+        // Touch and mobile optimizations
+        document.addEventListener('touchstart', function() {}, {passive: true});
+        
+        // Prevent zoom on double tap
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        function openAddModal() {
+            document.getElementById('addModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                document.getElementById('productName').focus();
+            }, 300);
+        }
+
+        function closeAddModal() {
+            document.getElementById('addModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            clearForm();
+        }
+
+        function addProduct() {
+            const name = document.getElementById('productName').value.trim();
+            const originalPrice = parseFloat(document.getElementById('originalPrice').value) || 0;
+            const discountPercent = parseFloat(document.getElementById('discountPercent').value) || 0;
+
+            if (!name) {
+                showToast('يرجى إدخال اسم المنتج', 'error');
+                return;
+            }
+
+            if (originalPrice <= 0) {
+                showToast('يرجى إدخال سعر صحيح', 'error');
+                return;
+            }
+
+            if (discountPercent < 0 || discountPercent > 100) {
+                showToast('نسبة الخصم يجب أن تكون بين 0 و 100', 'error');
+                return;
+            }
+
+            const discountAmount = (originalPrice * discountPercent) / 100;
+            const finalPrice = originalPrice - discountAmount;
+
+            const product = {
+                id: productCounter++,
+                name: name,
+                originalPrice: originalPrice,
+                discountPercent: discountPercent,
+                discountAmount: discountAmount,
+                finalPrice: finalPrice
+            };
+
+            products.push(product);
+            updateTable();
+            updateSummary();
+            closeAddModal();
+            showToast('تم إضافة المنتج بنجاح', 'success');
+        }
+
+        function deleteProduct(id) {
+            if (confirm('هل أنت متأكد من حذف هذا المنتج؟')) {
+                products = products.filter(product => product.id !== id);
+                updateTable();
+                updateSummary();
+                showToast('تم حذف المنتج', 'success');
+            }
+        }
+
+        function editProduct(id) {
+            const product = products.find(p => p.id === id);
+            if (product) {
+                document.getElementById('productName').value = product.name;
+                document.getElementById('originalPrice').value = product.originalPrice;
+                document.getElementById('discountPercent').value = product.discountPercent;
+                updatePreview();
+                openAddModal();
+                deleteProduct(id);
+            }
+        }
+
+        function updateTable() {
+            const tbody = document.getElementById('productsTable');
+            const mobileCards = document.getElementById('mobileCards');
+            
+            if (products.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="6" class="px-6 py-12 text-center text-gray-500">
+                            <div class="flex flex-col items-center">
+                                <span class="text-4xl mb-2">📦</span>
+                                <p>لا توجد منتجات</p>
+                                <p class="text-sm">اضغط + لإضافة منتج</p>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+                
+                mobileCards.innerHTML = `
+                    <div class="text-center text-gray-500 py-12">
+                        <span class="text-4xl mb-2 block">📦</span>
+                        <p>لا توجد منتجات</p>
+                        <p class="text-sm">اضغط + لإضافة منتج</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Desktop table
+            tbody.innerHTML = products.map(product => `
+                <tr class="row-hover border-b border-gray-100">
+                    <td class="px-4 py-3 text-sm font-medium text-gray-900">${product.id}</td>
+                    <td class="px-4 py-3 text-sm text-gray-900 font-medium">${product.name}</td>
+                    <td class="px-4 py-3 text-sm text-gray-900">${product.originalPrice.toFixed(2)} ريال</td>
+                    <td class="px-4 py-3 text-sm">
+                        <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs font-medium">
+                            ${product.discountPercent}%
+                        </span>
+                    </td>
+                    <td class="px-4 py-3 text-sm text-green-600 font-bold">${product.finalPrice.toFixed(2)} ريال</td>
+                    <td class="px-4 py-3 text-sm">
+                        <div class="flex gap-1">
+                            <button onclick="editProduct(${product.id})" 
+                                    class="bg-blue-500 text-white px-2 py-1 rounded text-xs mobile-btn">
+                                تعديل
+                            </button>
+                            <button onclick="deleteProduct(${product.id})" 
+                                    class="bg-red-500 text-white px-2 py-1 rounded text-xs mobile-btn">
+                                حذف
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `).join('');
+
+            // Mobile cards
+            mobileCards.innerHTML = products.map(product => `
+                <div class="bg-gray-50 rounded-lg p-4 mb-4 slide-up">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="font-semibold text-gray-800 text-lg">${product.name}</h3>
+                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs font-medium">
+                            #${product.id}
+                        </span>
+                    </div>
+                    
+                    <div class="space-y-2 mb-4">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-600">السعر الأصلي:</span>
+                            <span class="font-medium">${product.originalPrice.toFixed(2)} ريال</span>
+                        </div>
+                        
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-600">نسبة الخصم:</span>
+                            <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs font-medium">
+                                ${product.discountPercent}%
+                            </span>
+                        </div>
+                        
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-600">مبلغ الخصم:</span>
+                            <span class="text-red-600 font-medium">${product.discountAmount.toFixed(2)} ريال</span>
+                        </div>
+                        
+                        <div class="flex justify-between text-lg font-bold border-t pt-2">
+                            <span class="text-gray-800">السعر النهائي:</span>
+                            <span class="text-green-600">${product.finalPrice.toFixed(2)} ريال</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex gap-2">
+                        <button onclick="editProduct(${product.id})" 
+                                class="flex-1 bg-blue-500 text-white py-2 rounded-lg text-sm font-medium mobile-btn">
+                            تعديل
+                        </button>
+                        <button onclick="deleteProduct(${product.id})" 
+                                class="flex-1 bg-red-500 text-white py-2 rounded-lg text-sm font-medium mobile-btn">
+                            حذف
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function updateSummary() {
+            const totalSales = products.reduce((sum, product) => sum + product.originalPrice, 0);
+            const totalDiscounts = products.reduce((sum, product) => sum + product.discountAmount, 0);
+            const totalProducts = products.length;
+
+            document.getElementById('totalSales').textContent = `${totalSales.toFixed(2)} ريال`;
+            document.getElementById('totalDiscounts').textContent = `${totalDiscounts.toFixed(2)} ريال`;
+            document.getElementById('totalProducts').textContent = totalProducts;
+        }
+
+        function clearForm() {
+            document.getElementById('productName').value = '';
+            document.getElementById('originalPrice').value = '';
+            document.getElementById('discountPercent').value = '';
+            document.getElementById('pricePreview').classList.add('hidden');
+        }
+
+        function updatePreview() {
+            const originalPrice = parseFloat(document.getElementById('originalPrice').value) || 0;
+            const discountPercent = parseFloat(document.getElementById('discountPercent').value) || 0;
+            
+            if (originalPrice > 0) {
+                const discountAmount = (originalPrice * discountPercent) / 100;
+                const finalPrice = originalPrice - discountAmount;
+                
+                document.getElementById('previewOriginal').textContent = `${originalPrice.toFixed(2)} ريال`;
+                document.getElementById('previewDiscount').textContent = `${discountAmount.toFixed(2)} ريال`;
+                document.getElementById('previewFinal').textContent = `${finalPrice.toFixed(2)} ريال`;
+                document.getElementById('pricePreview').classList.remove('hidden');
+            } else {
+                document.getElementById('pricePreview').classList.add('hidden');
+            }
+        }
+
+        function showToast(message, type = 'info') {
+            const toast = document.createElement('div');
+            toast.className = `fixed top-4 left-1/2 transform -translate-x-1/2 px-6 py-3 rounded-lg text-white font-medium z-50 slide-up ${
+                type === 'success' ? 'bg-green-500' : 
+                type === 'error' ? 'bg-red-500' : 'bg-blue-500'
+            }`;
+            toast.textContent = message;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+
+        // Event listeners
+        document.getElementById('originalPrice').addEventListener('input', updatePreview);
+        document.getElementById('discountPercent').addEventListener('input', updatePreview);
+
+        // Close modal on outside click
+        document.getElementById('addModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAddModal();
+            }
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeAddModal();
+            }
+        });
+
+        // Initialize
+        updateSummary();
+        
+        // PWA Installation
+        let deferredPrompt;
+        let installButton;
+
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('sw.js')
+                    .then(function(registration) {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // PWA Install Prompt
+        window.addEventListener('beforeinstallprompt', (e) => {
+            console.log('beforeinstallprompt fired');
+            e.preventDefault();
+            deferredPrompt = e;
+            showInstallButton();
+        });
+
+        function showInstallButton() {
+            if (!installButton) {
+                installButton = document.createElement('button');
+                installButton.innerHTML = '📱 تثبيت التطبيق';
+                installButton.className = 'fixed top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium z-50 shadow-lg';
+                installButton.onclick = installApp;
+                document.body.appendChild(installButton);
+            }
+        }
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                        showToast('جاري تثبيت التطبيق...', 'success');
+                    }
+                    deferredPrompt = null;
+                    if (installButton) {
+                        installButton.remove();
+                        installButton = null;
+                    }
+                });
+            }
+        }
+
+        // Handle successful installation
+        window.addEventListener('appinstalled', (evt) => {
+            console.log('App installed successfully');
+            showToast('تم تثبيت التطبيق بنجاح!', 'success');
+            if (installButton) {
+                installButton.remove();
+                installButton = null;
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'969e407af2eae1d4',t:'MTc1NDMxMjU3NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
